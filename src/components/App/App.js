@@ -1,5 +1,6 @@
-import { Route, Routes } from 'react-router-dom';
-import Landing from '../Main/Main'
+import { Route, Routes } from "react-router-dom";
+import Main from "../Main/Main"
+import "./App.css";
 
 function App() {
   return (
@@ -7,7 +8,7 @@ function App() {
       <div className="root__content">
         <Routes>
           <Route path="/" element={(
-            <Landing />
+            <Main />
           )} />
         </Routes>
       </div>
