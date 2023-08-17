@@ -10,6 +10,7 @@ function Footer() {
               <li className="footer__link">
                 <a
                   className="footer__link"
+                  target="blank"
                   href="https://github.com/ViktoryPolischuk/">
                   Яндекс.Практикум
                 </a>
@@ -17,6 +18,7 @@ function Footer() {
               <li className="footer__link">
                 <a
                   className="footer__link"
+                  target="blank"
                   href="https://github.com/ViktoryPolischuk/">
                   Github
                   </a>
