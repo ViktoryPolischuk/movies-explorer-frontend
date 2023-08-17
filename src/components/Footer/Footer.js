@@ -10,16 +10,18 @@ function Footer() {
               <li className="footer__link">
                 <a
                   className="footer__link"
-                  target="blank"
-                  href="https://github.com/ViktoryPolischuk/">
+                  href="https://github.com/ViktoryPolischuk/"
+                  target="_blank"
+                  rel="noreferrer">
                   Яндекс.Практикум
                 </a>
               </li>
               <li className="footer__link">
                 <a
                   className="footer__link"
-                  target="blank"
-                  href="https://github.com/ViktoryPolischuk/">
+                  href="https://github.com/ViktoryPolischuk/"
+                  target="_blank"
+                  rel="noreferrer">
                   Github
                   </a>
               </li>
