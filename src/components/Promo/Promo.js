@@ -1,5 +1,5 @@
 import "./Promo.css";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 function Promo() {
   return (
@@ -12,9 +12,9 @@ function Promo() {
           <p className="promo__text">
             Листайте ниже, чтобы узнать больше про этот проект и его создателя.
           </p>
-          <Link className="promo__link" to="/">
+          <HashLink className="promo__link" to="#project">
             Узнать больше
-          </Link>
+          </HashLink>
         </div>
       </div>
     </section>

@@ -53,6 +53,10 @@
   opacity: 0.6;
 }
 
+.promo__link:active {
+  scale: 0.95;
+}
+
 @media screen and (max-width: 1023px) {
   .promo {
     padding: 140px 0 0;
