@@ -1,0 +1,23 @@
+.button {
+  box-sizing: border-box;
+  display: block;
+  cursor: pointer;
+  padding: 13px 15px 15px;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  background-color: #FF6838;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.21;
+  text-align: center;
+}
+
+.button:hover {
+  opacity: 0.6;
+}
+
+.button:active {
+  scale: 0.95;
+}
