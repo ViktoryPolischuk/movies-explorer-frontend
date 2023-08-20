@@ -8,22 +8,20 @@ import "./Login.css";
 function Login() {
   return (
     <main className="login">
-      <header className="login__header">
-        <Logo />
-        <Title>Рады видеть!</Title>
-      </header>
-      <form className="login__form">
-        <Field type="email" label="E-mail" required />
-        <Field type="password" label="Пароль" required />
-        <footer className="login__footer">
-          <Button type="submit">Войти</Button>
-          <p className="login__footer-text">
+      <section className="login__content">
+        <Logo className="login__logo" />
+        <Title className="login__title">Рады видеть!</Title>
+        <form className="login__form">
+          <Field type="email" label="E-mail" minLength="6" maxLength="30" required />
+          <Field type="password" label="Пароль" minLength="6" maxLength="30" required />
+          <Button type="submit" className="login__button">Войти</Button>
+        </form>
+        <p className="login__text">
           Ещё не зарегистрированы?
           {" "}
-          <Link className="login__footer-link" to="/signup">Регистрация</Link>
-          </p>
-        </footer>
-      </form>
+          <Link className="login__text-link" to="/signup">Регистрация</Link>
+        </p>
+      </section>
     </main>
   );
 }

@@ -16,8 +16,10 @@ function SavedMovies() {
   return (
     <>
       <Header isLanding={false} />
-      <SearchForm />
-      <MoviesCardList movies={movies} withDeleteButton />
+      <main>
+        <SearchForm />
+        <MoviesCardList movies={movies} withDeleteButton />
+      </main>
       <Footer />
     </>
   );

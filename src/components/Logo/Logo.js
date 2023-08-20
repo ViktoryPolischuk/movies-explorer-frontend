@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import "./Logo.css";
 
-function Logo() {
+function Logo({className = ""}) {
   return (
-    <Link className="logo" to="/" title="На главную" />
+    <Link className={`logo ${className}`} to="/" title="На главную" />
   );
 }
 

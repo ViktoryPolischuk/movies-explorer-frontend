@@ -8,25 +8,25 @@ function Portfolio() {
         <li className="portfolio__item">
           <a
             className="portfolio__link"
-            href="https://github.com/ViktoryPolischuk/"
+            href="https://github.com/ViktoryPolischuk/react-mesto-api-full-gha"
             target="_blank"
             rel="noreferrer">
-            Статичный сайт
+            Mesto: социальная сеть
           </a>
         </li>
         <li className="portfolio__item">
           <a
             className="portfolio__link"
-            href="https://github.com/ViktoryPolischuk/"
+            href="https://viktorypolischuk.github.io/russian-travel/"
             target="_blank"
             rel="noreferrer">
-            Адаптивный сайт
+             Адаптивный сайт
           </a>
         </li>
         <li className="portfolio__item">
           <a
             className="portfolio__link"
-            href="https://github.com/ViktoryPolischuk/"
+            href="https://viktorypolischuk.github.io/mesto/"
             target="_blank"
             rel="noreferrer">
             Одностраничное приложение

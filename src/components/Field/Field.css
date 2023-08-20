@@ -4,6 +4,7 @@
 }
 
 .field__text {
+  display: block;
   margin-bottom: 10px;
   color: #A0A0A0;
   font-size: 10px;
@@ -24,6 +25,10 @@
   line-height: 1.23;
 }
 
+.field__input:focus {
+  outline: 1px solid #2BE080;
+}
+
 .field__input_error {
   color: #EE3465;
 }
@@ -32,6 +37,7 @@
   position: absolute;
   top: 100%;
   left: 0;
+  display: block;
   margin-top: 10px;
   color: #EE3465;
   font-size: 10px;

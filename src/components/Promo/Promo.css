@@ -6,7 +6,7 @@
 .promo__container {
   background-image: url("../../images/promo-image.svg");
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right 75px;
   background-size: 310px 304px;
   padding: 75px 0;
 }
@@ -26,10 +26,14 @@
   margin: 0 0 36px;
 }
 
+.promo__wrap {
+  white-space: nowrap;
+}
+
 .promo__text {
   font-size: 13px;
   font-weight: 400;
-  line-height: 1.16;
+  line-height: 1.23;
   color: #FFFFFF;
   opacity: 0.5;
   margin: 0 330px 0 0;
@@ -44,7 +48,7 @@
   color: #FFFFFF;
   border: solid 1px rgba(255,255,255,0.6);
   border-radius: 3px;
-  padding: 10px 20px;
+  padding: 9px 19px;
   align-items: center;
   cursor: pointer;
 }
@@ -80,8 +84,9 @@
   }
 
   .promo__text {
-    line-height: normal;
+    line-height: 1.23;
     margin: 0 254px;
+    padding-bottom: 92px;
   }
 
   .promo__link {
@@ -101,7 +106,7 @@
 
   .promo__title {
     font-size: 30px;
-    line-height: 1.26;
+    line-height: 1.27;
     letter-spacing: -1.2px;
     margin: 0 10px 24px;
   }

@@ -15,8 +15,7 @@ const currentUser = {
 
 function App() {
   return (
-    <div className="root">
-      <div className="root__content">
+    <>
         <CurrentUserContext.Provider value={currentUser}>
           <Routes>
             <Route path="/" element={(
@@ -42,8 +41,7 @@ function App() {
             )} />
           </Routes>
         </CurrentUserContext.Provider>
-      </div>
-    </div>
+      </>
   );
 }
 

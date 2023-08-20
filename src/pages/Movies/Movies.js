@@ -16,8 +16,10 @@ function Movies() {
   return (
     <>
       <Header isLanding={false} />
-      <SearchForm />
-      <MoviesCardList movies={movies} />
+      <main>
+        <SearchForm />
+        <MoviesCardList movies={movies} />
+      </main>
       <Footer />
     </>
   );

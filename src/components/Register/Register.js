@@ -8,23 +8,21 @@ import "./Register.css";
 function Register() {
   return (
     <main className="register">
-      <header className="register__header">
-        <Logo />
-        <Title>Добро пожаловать!</Title>
-      </header>
-      <form className="register__form">
-        <Field type="name" label="Имя" required />
-        <Field type="email" label="E-mail" required />
-        <Field type="password" label="Пароль" required error="Что-то пошло не так..." />
-        <footer className="register__footer">
-          <Button type="submit">Зарегистрироваться</Button>
-          <p className="register__footer-text">
+      <section className="register__content">
+        <Logo className="register__logo" />
+        <Title className="register__title">Добро пожаловать!</Title>
+        <form className="register__form">
+          <Field type="text" label="Имя" minLength="2" maxLength="30" required />
+          <Field type="email" label="E-mail" minLength="6" maxLength="30" required />
+          <Field type="password" label="Пароль" minLength="6" maxLength="30" required error="Что-то пошло не так..." />
+          <Button type="submit" className="register__button">Зарегистрироваться</Button>
+        </form>
+        <p className="register__text">
           Уже зарегистрированы?
           {" "}
-          <Link className="register__footer-link" to="/signin">Войти</Link>
-          </p>
-        </footer>
-      </form>
+          <Link className="register__text-link" to="/signin">Войти</Link>
+        </p>
+      </section>
     </main>
   );
 }

@@ -18,7 +18,7 @@ function Header({isLanding}) {
     <header className={`header ${isLanding ? "header_landing" : ""}`}>
       <Logo />
       {isLanding && (
-        <nav className="header_nav">
+        <nav className="header__nav">
           <ul className="header__nav-links header__nav-links_type_auth">
             <li>
               <Link
@@ -43,9 +43,9 @@ function Header({isLanding}) {
         <>
           <nav className={`header__nav header__nav_overlay ${isOpened ? "header__nav_opened" : ""}`}>
             <ul className="header__nav-links header__nav-links_type_site">
-              <li>
+              <li className="header__mobile-link">
                 <Link
-                  className="header__nav-link header__nav-link_type_mobile"
+                  className="header__nav-link"
                   to="/"
                 >
                   Главная

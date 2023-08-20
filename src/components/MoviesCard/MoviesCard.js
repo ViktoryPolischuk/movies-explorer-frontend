@@ -10,8 +10,10 @@ function MoviesCard({ nameRU, duration, owner, thumbnail, withDeleteButton }) {
     <section className="movies-card">
       <figure className="movies-card__image-container">
         <figcaption className="movies-card__caption">
-          <h2 className="movies-card__title">{nameRU}</h2>
-          <p className="movies-card__duration">{duration}</p>
+          <div className="movies-card__text">
+            <h2 className="movies-card__title">{nameRU}</h2>
+            <p className="movies-card__duration">{duration}</p>
+          </div>
           {!withDeleteButton && (
             <button
               type="button"
