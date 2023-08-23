@@ -1,0 +1,160 @@
+.project {
+  padding: 110px 70px;
+}
+
+.project__title {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.88px;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #000000;
+}
+
+.project__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.project__items {
+  gap: 53px;
+  margin: 70px 0 110px;
+}
+
+.project__item {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.project__item-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: normal;
+  letter-spacing: -0.8px;
+}
+
+.project__item-description {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+}
+
+.project__stages {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.project__stage-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  background-color: #F2F2F2;
+  padding: 9px 0;
+}
+
+.project__stage-title_first {
+  background-color: #2BE080;
+}
+
+.project__stage-description {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.21;
+  color: #A0A0A0;
+  padding-top: 14px;
+}
+
+@media screen and (max-width: 1023px) {
+  .project {
+    padding: 90px 50px;
+  }
+
+  .project__items {
+    gap: 30px;
+    margin-bottom: 93px;
+  }
+
+  .project__item {
+    gap: 22px;
+    flex: 1;
+  }
+
+  .project__item-title {
+    line-height: 1.2;
+  }
+
+  .project__item-description {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .project__stages {
+    grid-template-columns: 21% 79%;
+  }
+  .project__stage-description {
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .project {
+    padding: 70px 18px;
+  }
+
+  .project__title {
+    font-size: 18px;
+    letter-spacing: -0.72px;
+    padding-bottom: 28px;
+  }
+
+  .project__list {
+    display: flex;
+    flex-direction: column;
+  }
+  .project__items {
+    gap: 56px;
+    margin: 60px 0;
+  }
+
+  .project__item {
+    gap: 16px;
+  }
+
+  .project__item-title {
+    font-size: 18px;
+    line-height: normal;
+    letter-spacing: -0.72px;
+  }
+  .project__item-description {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .project__stages {
+    display: grid;
+    grid-template-columns: 35fr 65fr;
+  }
+
+  .project__stage-title {
+    font-size: 11px;
+    line-height: normal;
+    padding: 11px 0;
+  }
+
+  .project__stage-description {
+    font-size: 11px;
+    line-height: normal;
+    padding-top: 10px;
+  }
+}

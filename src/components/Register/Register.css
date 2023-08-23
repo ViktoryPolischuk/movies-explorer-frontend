@@ -1,0 +1,85 @@
+.register {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  padding: 70px 30px;
+  min-height: 100vh;
+}
+
+.register__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  max-width: 396px;
+}
+
+.register__title {
+  margin-top: 40px;
+}
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.register__button {
+  margin-top: 71px;
+}
+
+.register__text {
+  margin: 16px 0 0;
+  color: #A0A0A0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.21;
+}
+
+.register__text-link {
+  color: #FF6838;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.register__text-link:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 767px) {
+  .register {
+    padding-top: 56px;
+    padding-bottom: 30px;
+  }
+
+  .register__logo {
+    align-self: center;
+  }
+
+  .register__title {
+    margin-top: 50px;
+    align-self: center;
+  }
+
+  .register__content {
+    justify-content: space-between;
+  }
+
+  .register__form {
+    flex: 1;
+    margin-top: 80px;
+  }
+
+  .register__button {
+    margin-top: auto;
+  }
+
+  .register__text {
+    font-size: 12px;
+    margin-top: 14px;
+    line-height: 1.25;
+  }
+}
