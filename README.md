@@ -6,6 +6,8 @@
 
 [Ссылка на макет](https://www.figma.com/file/a1zBh8GXVNJWPrCkuPJfjr/light-5?type=design&node-id=891-3857&mode=design&t=aslhiPY87ZJEJ1Rs-0) (Light 5)
 
+[Ссылка на pull request](https://github.com/ViktoryPolischuk/movies-explorer-frontend/pull/2) (level-3)
+
 ## Ссылки на проект
 
 IP 158.160.107.153
