@@ -1,24 +1,83 @@
-import Header from "../../components/Header/Header";
-import SearchForm from "../../components/SearchForm/SearchForm";
-import MoviesCardList from "../../components/MoviesCardList/MoviesCardList";
-import Footer from "../../components/Footer/Footer";
-import thumbnail from "../../images/card-example.jpg";
+import { useState, useEffect } from 'react';
+import Header from '../../components/Header/Header';
+import SearchForm from '../../components/SearchForm/SearchForm';
+import MoviesCardList from '../../components/MoviesCardList/MoviesCardList';
+import Footer from '../../components/Footer/Footer';
+import { moviesApiConfig } from '../../utils/constants';
+import moviesApi from '../../utils/MoviesApi';
+import filterMovies from '../../utils/filterMovies';
 
-const movies = [...new Array(12)].map((item, index) => ({
-  _id: index,
-  nameRU: "33 слова о дизайне",
-  duration: "1ч 47м",
-  owner: index % 4 ? null : "1c29f760-47d2-497d-ab82-dded67472c83",
-  thumbnail,
-}));
+function Movies({ savedMovies, onAddMovie, onDeleteMovie }) {
+  const [isLoading, setIsLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(localStorage.getItem('searchQuery') || '');
+  const [isShortMovie, setIsShortMovie] = useState(JSON.parse(localStorage.getItem('isShortMovie')) || false);
+  const [movies, setMovies] = useState([]);
 
-function Movies() {
+  const filteredMovies = JSON.parse(localStorage.getItem('filteredMovies'))
+    || (searchQuery
+      ? filterMovies(movies, searchQuery, isShortMovie)
+      : []);
+
+  const resultMovies = filteredMovies.map((movie) => {
+    const saved = savedMovies.find(({ movieId }) => movie.movieId === movieId);
+    return {
+      ...movie,
+      owner: saved ? saved.owner : null,
+    };
+  });
+
+  function handleSearch(search, isShort) {
+    localStorage.setItem('searchQuery', search);
+    localStorage.setItem('isShortMovie', JSON.stringify(isShort));
+    localStorage.removeItem('filteredMovies');
+    setSearchQuery(search);
+    setIsShortMovie(isShort);
+    if (search && movies.length === 0) {
+      setIsLoading(true);
+      moviesApi.getMovies()
+        .then((result) => {
+          setMovies(result.map(({
+            id,
+            created_at: _,
+            updated_at: __,
+            ...movie
+          }) => ({
+            ...movie,
+            movieId: id,
+            image: moviesApiConfig.baseUrl + movie.image.url,
+            thumbnail: moviesApiConfig.baseUrl + movie.image.formats.thumbnail.url,
+          })));
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
+  }
+
+  useEffect(() => {
+    if (movies.length) {
+      localStorage.setItem('filteredMovies', JSON.stringify(filteredMovies));
+    }
+  }, [movies, searchQuery, isShortMovie]);
+
   return (
     <>
       <Header isLanding={false} />
       <main>
-        <SearchForm />
-        <MoviesCardList movies={movies} />
+        <SearchForm
+          searchQuery={searchQuery}
+          isShortMovie={isShortMovie}
+          onSearch={handleSearch}
+        />
+        <MoviesCardList
+          isLoading={isLoading}
+          movies={resultMovies}
+          onAddMovie={onAddMovie}
+          onDeleteMovie={onDeleteMovie}
+        />
       </main>
       <Footer />
     </>

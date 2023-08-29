@@ -3,8 +3,16 @@
   box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
 }
 
+.movies-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
 .movies-card__image-container {
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .movies-card__caption {
@@ -20,6 +28,7 @@
   display: flex;
   flex-direction: column;
   gap: 9px;
+  max-width: calc(100% - 44px);
 }
 
 .movies-card__title {
@@ -88,4 +97,18 @@
 .movies-card__image {
   width: 100%;
   display: block;
+  aspect-ratio: 363/203;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1023px) {
+  .movies-card__image {
+    aspect-ratio: 339/190;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .movies-card__image {
+    aspect-ratio: 300/168;
+  }
 }

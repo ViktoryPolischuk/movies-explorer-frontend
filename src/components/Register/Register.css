@@ -26,6 +26,14 @@
   gap: 20px;
 }
 
+.register__error {
+  margin: 0;
+  color: #EE3465;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+}
+
 .register__button {
   margin-top: 71px;
 }

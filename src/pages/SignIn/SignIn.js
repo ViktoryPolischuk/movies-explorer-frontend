@@ -1,10 +1,12 @@
-import Login from "../../components/Login/Login";
+import Login from '../../components/Login/Login';
 
-function SignIn() {
+function SignIn({ isSubmitting, submittingError, onSubmit }) {
   return (
-    <>
-      <Login />
-    </>
+    <Login
+      isSubmitting={isSubmitting}
+      submittingError={submittingError}
+      onSubmit={onSubmit}
+    />
   );
 }
 

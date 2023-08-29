@@ -1,6 +1,6 @@
-import "./Title.css";
+import './Title.css';
 
-function Title({children, className = ""}) {
+function Title({ children, className = '' }) {
   return (
     <h1 className={`title ${className}`}>{children}</h1>
   );

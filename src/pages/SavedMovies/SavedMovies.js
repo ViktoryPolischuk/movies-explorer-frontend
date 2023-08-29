@@ -1,24 +1,34 @@
-import Header from "../../components/Header/Header";
-import SearchForm from "../../components/SearchForm/SearchForm";
-import MoviesCardList from "../../components/MoviesCardList/MoviesCardList";
-import Footer from "../../components/Footer/Footer";
-import thumbnail from "../../images/card-example.jpg";
+import { useState } from 'react';
+import Header from '../../components/Header/Header';
+import SearchForm from '../../components/SearchForm/SearchForm';
+import MoviesCardList from '../../components/MoviesCardList/MoviesCardList';
+import Footer from '../../components/Footer/Footer';
+import filterMovies from '../../utils/filterMovies';
 
-const movies = [...new Array(3)].map((item, index) => ({
-  _id: index,
-  nameRU: "33 слова о дизайне",
-  duration: "1ч 47м",
-  owner: "1c29f760-47d2-497d-ab82-dded67472c83",
-  thumbnail
-}))
+function SavedMovies({ savedMovies, onDeleteMovie }) {
+  const [isShortMovie, setIsShortMovie] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
-function SavedMovies() {
+  const filteredMovies = filterMovies(savedMovies, searchQuery, isShortMovie);
+
+  function handleSearch(search, isShort) {
+    setSearchQuery(search);
+    setIsShortMovie(isShort);
+  }
+
   return (
     <>
       <Header isLanding={false} />
       <main>
-        <SearchForm />
-        <MoviesCardList movies={movies} withDeleteButton />
+        <SearchForm
+          searchQuery={searchQuery}
+          isShortMovie={isShortMovie}
+          onSearch={handleSearch}
+        />
+        <MoviesCardList
+          movies={filteredMovies}
+          onDeleteMovie={onDeleteMovie}
+        />
       </main>
       <Footer />
     </>
