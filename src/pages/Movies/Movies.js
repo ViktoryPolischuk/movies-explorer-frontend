@@ -27,33 +27,35 @@ function Movies({ savedMovies, onAddMovie, onDeleteMovie }) {
   });
 
   function handleSearch(search, isShort) {
-    localStorage.setItem('searchQuery', search);
-    localStorage.setItem('isShortMovie', JSON.stringify(isShort));
-    localStorage.removeItem('filteredMovies');
-    setSearchQuery(search);
-    setIsShortMovie(isShort);
-    if (search && movies.length === 0) {
-      setIsLoading(true);
-      moviesApi.getMovies()
-        .then((result) => {
-          setMovies(result.map(({
-            id,
-            created_at: _,
-            updated_at: __,
-            ...movie
-          }) => ({
-            ...movie,
-            movieId: id,
-            image: moviesApiConfig.baseUrl + movie.image.url,
-            thumbnail: moviesApiConfig.baseUrl + movie.image.formats.thumbnail.url,
-          })));
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
+    if (search) {
+      localStorage.setItem('searchQuery', search);
+      localStorage.setItem('isShortMovie', JSON.stringify(isShort));
+      localStorage.removeItem('filteredMovies');
+      setSearchQuery(search);
+      setIsShortMovie(isShort);
+      if (movies.length === 0) {
+        setIsLoading(true);
+        moviesApi.getMovies()
+          .then((result) => {
+            setMovies(result.map(({
+              id,
+              created_at: _,
+              updated_at: __,
+              ...movie
+            }) => ({
+              ...movie,
+              movieId: id,
+              image: moviesApiConfig.baseUrl + movie.image.url,
+              thumbnail: moviesApiConfig.baseUrl + movie.image.formats.thumbnail.url,
+            })));
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+          .finally(() => {
+            setIsLoading(false);
+          });
+      }
     }
   }
 
@@ -71,9 +73,11 @@ function Movies({ savedMovies, onAddMovie, onDeleteMovie }) {
           searchQuery={searchQuery}
           isShortMovie={isShortMovie}
           onSearch={handleSearch}
+          allowEmpty={false}
         />
         <MoviesCardList
           isLoading={isLoading}
+          searchQuery={searchQuery}
           movies={resultMovies}
           onAddMovie={onAddMovie}
           onDeleteMovie={onDeleteMovie}

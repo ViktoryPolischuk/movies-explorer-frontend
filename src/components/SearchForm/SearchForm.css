@@ -29,6 +29,14 @@
   outline: 1px solid #2BE080;
 }
 
+.search-form__input_error {
+  color: #EE3465;
+}
+
+.search-form__input_error:focus {
+  outline: 1px solid #EE3465;
+}
+
 .search-form__button {
   background-image: url("../../images/search-button.svg");
   background-size: 34px 34px;
@@ -40,12 +48,20 @@
   cursor: pointer;
 }
 
-.search-form__button:hover {
+.search-form__button:not(:disabled):hover {
   opacity: 0.6;
 }
 
-.search-form__button:active {
+.search-form__button:not(:disabled):active {
   transform: scale(0.9);
+}
+
+.search-form__error {
+  margin-top: 15px;
+  color: #EE3465;
+  font-size: 14px;
+  line-height: normal;
+  text-align: center;
 }
 
 .search-form__checkbox-container {

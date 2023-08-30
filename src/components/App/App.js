@@ -119,6 +119,7 @@ function App() {
     mainApi.signOut()
       .then(() => {
         setCurrentUser();
+        localStorage.clear();
       })
       .catch((err) => {
         console.log(err);

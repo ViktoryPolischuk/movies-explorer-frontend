@@ -24,8 +24,10 @@ function SavedMovies({ savedMovies, onDeleteMovie }) {
           searchQuery={searchQuery}
           isShortMovie={isShortMovie}
           onSearch={handleSearch}
+          allowEmpty
         />
         <MoviesCardList
+          searchQuery={searchQuery}
           movies={filteredMovies}
           onDeleteMovie={onDeleteMovie}
         />

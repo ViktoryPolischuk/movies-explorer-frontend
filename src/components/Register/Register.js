@@ -4,6 +4,7 @@ import Title from '../Title/Title';
 import Field from '../Field/Field';
 import Button from '../Button/Button';
 import useFormValidation from '../../utils/useFormValidation';
+import { NAME_PATTERN, EMAIL_PATTERN } from '../../utils/constants';
 import './Register.css';
 
 function Register({ isSubmitting, submittingError, onSubmit }) {
@@ -31,6 +32,7 @@ function Register({ isSubmitting, submittingError, onSubmit }) {
             name="name"
             minLength="2"
             maxLength="30"
+            pattern={NAME_PATTERN}
             required
             value={values.name || ''}
             error={errors.name}
@@ -42,6 +44,7 @@ function Register({ isSubmitting, submittingError, onSubmit }) {
             name="email"
             minLength="6"
             maxLength="30"
+            pattern={EMAIL_PATTERN}
             required
             value={values.email || ''}
             error={errors.email}

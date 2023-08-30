@@ -4,6 +4,7 @@ import Title from '../Title/Title';
 import Field from '../Field/Field';
 import Button from '../Button/Button';
 import useFormValidation from '../../utils/useFormValidation';
+import { EMAIL_PATTERN } from '../../utils/constants';
 import './Login.css';
 
 function Login({ isSubmitting, submittingError, onSubmit }) {
@@ -31,6 +32,7 @@ function Login({ isSubmitting, submittingError, onSubmit }) {
             name="email"
             minLength="6"
             maxLength="30"
+            pattern={EMAIL_PATTERN}
             required
             value={values.email || ''}
             error={errors.email}

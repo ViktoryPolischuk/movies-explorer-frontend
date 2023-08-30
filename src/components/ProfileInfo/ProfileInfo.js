@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from 'react';
 import Title from '../Title/Title';
 import CurrentUserContext from '../../contexts/CurrentUserContext';
 import useFormValidation from '../../utils/useFormValidation';
+import { NAME_PATTERN, EMAIL_PATTERN } from '../../utils/constants';
 import './ProfileInfo.css';
 
 function ProfileInfo({
@@ -65,6 +66,7 @@ function ProfileInfo({
               placeholder=""
               minLength="2"
               maxLength="30"
+              pattern={NAME_PATTERN}
               required
               readOnly={!isEdit}
               onChange={handleChange}
@@ -83,6 +85,7 @@ function ProfileInfo({
               placeholder=""
               minLength="2"
               maxLength="30"
+              pattern={EMAIL_PATTERN}
               required
               readOnly={!isEdit}
               onChange={handleChange}

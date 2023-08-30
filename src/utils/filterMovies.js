@@ -1,4 +1,4 @@
-const SHORT_MOVIE_DURATION = 40;
+import { SHORT_MOVIE_DURATION } from './constants';
 
 function filterMovies(movies, searchQuery, isShortMovie) {
   return movies
