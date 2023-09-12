@@ -1,13 +1,23 @@
-import Header from "../../components/Header/Header";
-import ProfileInfo from "../../components/ProfileInfo/ProfileInfo";
+import Header from '../../components/Header/Header';
+import ProfileInfo from '../../components/ProfileInfo/ProfileInfo';
 
-function Movies() {
+function Profile({
+  isSubmitting,
+  submittingError,
+  onSubmit,
+  onSignOut,
+}) {
   return (
     <>
       <Header isLanding={false} />
-      <ProfileInfo />
+      <ProfileInfo
+        isSubmitting={isSubmitting}
+        submittingError={submittingError}
+        onSubmit={onSubmit}
+        onSignOut={onSignOut}
+      />
     </>
   );
 }
 
-export default Movies;
+export default Profile;

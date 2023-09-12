@@ -1,10 +1,12 @@
-import Register from "../../components/Register/Register";
+import Register from '../../components/Register/Register';
 
-function SignUp() {
+function SignUp({ isSubmitting, submittingError, onSubmit }) {
   return (
-    <>
-      <Register />
-    </>
+    <Register
+      isSubmitting={isSubmitting}
+      submittingError={submittingError}
+      onSubmit={onSubmit}
+    />
   );
 }
 

@@ -1,5 +1,5 @@
-import "./AboutMe.css";
-import studentImage from "../../images/student-image.jpg";
+import './AboutMe.css';
+import studentImage from '../../images/student-image.jpg';
 
 function AboutMe() {
   return (
@@ -12,8 +12,8 @@ function AboutMe() {
           <p className="student__biography">
             Я родилась и живу в Москве, закончила факультет экономики МГУУ Правительства Москвы.
             Я замужем и у меня трое детей. Со школы увлекалась программированием, но долгое время
-            не могла решиться заняться им всерьез. И вот дорога жизни привела меня в ЯндексПрактикум,
-            чему я очень рада.
+            не могла решиться заняться им всерьез.
+            И вот дорога жизни привела меня в Яндекс Практикум, чему я очень рада.
           </p>
           <a
           className="student__link"

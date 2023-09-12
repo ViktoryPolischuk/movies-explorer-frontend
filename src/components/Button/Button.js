@@ -1,9 +1,9 @@
-import "./Button.css";
+import './Button.css';
 
-function Button({ type, className = "", children }) {
+function Button({ className = '', children, ...rest }) {
   return (
-    <button type={type} className={`button ${className}`}>{children}</button>
-  )
+    <button {...rest} className={`button ${className}`}>{children}</button>
+  );
 }
 
 export default Button;
